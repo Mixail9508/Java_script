@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        // function Post(author,  text, date) {
+        //     this.author = author;
+        //     this.text = text;
+        //     this.date = date;
+        // }
+
+        // Post.prototype.edit = function(text_1) {
+        //     this.text = text_1;
+        // };
+
+        // const record = new Post('Victor', 'Lorem ipsum dolor sit amet.', '12-04-1978 гг.');
+        // /* до редактирования текст был таким */
+        // console.log(record);
+        // record.edit('Lorem, ipsum dolor.');
+        // console.log(record);
+
+        // function AttachedPost(author,  text, date) {
+        //     Post.call(this, author, text, date);
+        //     this.highlighted = false;
+        // }
+
+        // AttachedPost.prototype = Object.create(Post.prototype);
+        // AttachedPost.prototype.constructor = AttachedPost;
+
+        // AttachedPost.prototype.makeTextHighlighted = function() {
+        //     this.highlighted = true;
+        // };
+
+        // const replac = new AttachedPost('Oleg', 'Adipisci, reprehenderit', new Date());
+        // /* до редактирования текст был таким */
+        // console.log(replac);
+        // replac.makeTextHighlighted();
+        // replac.edit('Excepturi, facere.')
+        // console.log(replac);
+
+
+
+        class Post_1 {
+            constructor(author,  text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+            
+            edit_2(text_2) {
+                this.text = text_2;
+            }
+        }
+
+        const record_2 = new Post_1('Igor', 'Harum aut ducimus, explicabo asperiores at praesentium', '23-12-2001 гг.');
+        /* до редактирования текст был таким */
+        console.log(record_2);
+        record_2.edit_2('id cumque impedit non sunt quam accusantium maxime neque');
+        console.log(record_2);
+
+        class AttachedPost_2 extends Post_1 {
+            constructor(author,  text, date) {
+                super(author,  text, date);
+                this.highlighted = false;
+            }
+            makeTextHighlighted_2() {
+                this.highlighted = true;
+            }
+        }
+
+        const replac_2 = new AttachedPost_2('Roma', 'dicta praesentium.', new Date());
+        /* до редактирования текст был таким */
+        console.log(replac_2);
+        replac_2.makeTextHighlighted_2();
+        replac_2.edit_2('Quidem, assumenda!');
+        console.log(replac_2);
+            
+    </script>    
+</body>
+</html>
